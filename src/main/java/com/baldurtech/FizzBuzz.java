@@ -4,10 +4,15 @@ public class FizzBuzz
 {
     public String say(Integer num)
     {
+        if(num % 3 ==0 )
+        {
+            return "Fizz";
+        }
         return String.valueOf(num);
     }
     
     static Boolean testResult = true;
+    
     public static void main(String args[])
     {
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -17,6 +22,7 @@ public class FizzBuzz
         
         asserEquals("2",fizzBuzz.say(2));
         
+        asserEquals("Fizz",fizzBuzz.say(3));
         outputTestResult();
     }
     public static void asserEquals(String expectedResult,String actualResult)
