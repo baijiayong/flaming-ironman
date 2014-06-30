@@ -6,14 +6,14 @@ public class FizzBuzzTest
     
     public static void main(String args[])
     {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String actualResult = fizzBuzz.say(1);
+        FizzBuzz fizzBuzz1 = new FizzBuzz();      
+        asserEquals("1",fizzBuzz1.say(1));
         
-        asserEquals("1",fizzBuzz.say(1));
-        
-        asserEquals("2",fizzBuzz.say(2));
-        
-        asserEquals("Fizz",fizzBuzz.say(3));
+        FizzBuzz fizzBuzz2 = new FizzBuzz();
+        asserEquals("2",fizzBuzz2.say(2));
+      
+        FizzBuzz fizzBuzz3 = new FizzBuzz();   
+        asserEquals("Fizz",fizzBuzz3.say(3));
         outputTestResult();
     }
     public static void asserEquals(String expectedResult,String actualResult)
