@@ -1,3 +1,4 @@
 #!/bin/sh
 
+
 javac -d target/classes/ src/main/java/com/baldurtech/*.java src/main/test/com/baldurtech/*.java
