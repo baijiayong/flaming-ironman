@@ -7,21 +7,15 @@ public class FizzBuzz
         return String.valueOf(num);
     }
     
-     static Boolean testResult = true;
+    static Boolean testResult = true;
     public static void main(String args[])
     {
         FizzBuzz fizzBuzz = new FizzBuzz();
         String actualResult = fizzBuzz.say(1);
-        if(false ==("1".equals(fizzBuzz.say(1))))
-        {
-            testResult = false;
-            System.out.println("Excepted '1' , but '" + actualResult + "'");
-        }
-         if(false ==("2".equals(fizzBuzz.say(2))))
-        {
-            testResult = false;
-            System.out.println("Excepted '2' , but '" + actualResult + "'");
-        }
+        
+        asserEquals("1",fizzBuzz.say(1));
+        
+        asserEquals("2",fizzBuzz.say(2));
         if(testResult)
         {
             System.out.println("TEST SUCCESS");
@@ -30,5 +24,13 @@ public class FizzBuzz
             System.out.println("TEST FAILED");
         }
         
+    }
+    public static void asserEquals(String expectedResult,String actualResult)
+    {
+       if(false ==(expectedResult.equals(actualResult)))
+        {
+            testResult = false;
+            System.out.println("Excepted '" + expectedResult + "' , but '" + actualResult + "'");
+        }
     }
 }
