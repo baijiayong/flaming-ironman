@@ -6,10 +6,10 @@ public class FizzBuzz
     {
         return String.valueOf(num);
     }
+    
+     static Boolean testResult = true;
     public static void main(String args[])
     {
-        Boolean testResult = true;
-        
         FizzBuzz fizzBuzz = new FizzBuzz();
         String actualResult = fizzBuzz.say(1);
         if(false ==("1".equals(fizzBuzz.say(1))))
