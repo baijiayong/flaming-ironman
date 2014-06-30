@@ -16,14 +16,8 @@ public class FizzBuzz
         asserEquals("1",fizzBuzz.say(1));
         
         asserEquals("2",fizzBuzz.say(2));
-        if(testResult)
-        {
-            System.out.println("TEST SUCCESS");
-        }else
-        {
-            System.out.println("TEST FAILED");
-        }
         
+        outputTestResult();
     }
     public static void asserEquals(String expectedResult,String actualResult)
     {
@@ -31,6 +25,16 @@ public class FizzBuzz
         {
             testResult = false;
             System.out.println("Excepted '" + expectedResult + "' , but '" + actualResult + "'");
+        }
+    }
+    private static void outputTestResult()
+    {
+        if(testResult)
+        {
+            System.out.println("TEST SUCCESS");
+        }else
+        {
+            System.out.println("TEST FAILED");
         }
     }
 }
