@@ -10,8 +10,7 @@ public class FizzBuzzTest
     
     public static void main(String args[]) throws Exception
     {
-       
-        for(Method method : getAllTestMethod())
+        for(Method method : getAllTestMethod(FizzBuzzTest.class))
         {
             System.out.println("testing: " + method.getName());
             Object obj = FizzBuzzTest.class.newInstance();
@@ -20,10 +19,11 @@ public class FizzBuzzTest
         
         outputTestResult();
     }
-    public void getAllTestMethod() throws Exception
+
+    public static List<Method> getAllTestMethod(Class clazz) throws Exception
     {
         List<Method> testMethods = new ArrayList<Method>();
-        Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
+        Method[] methods = clazz.getDeclaredMethods();
         for(Method method : methods)
         {
             if(method.getName().startsWith("test"))
@@ -31,6 +31,7 @@ public class FizzBuzzTest
                 testMethods.add(method);
             }
         }
+        return testMethods;
     }
     FizzBuzz fizzBuzz = new FizzBuzz();
     public void test_1_should_be_1()
