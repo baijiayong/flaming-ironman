@@ -10,6 +10,18 @@ public class FizzBuzzTest
     
     public static void main(String args[]) throws Exception
     {
+       
+        for(Method method : getAllTestMethod())
+        {
+            System.out.println("testing: " + method.getName());
+            Object obj = FizzBuzzTest.class.newInstance();
+            method.invoke(obj,new Object[]{});
+        }     
+        
+        outputTestResult();
+    }
+    public void getAllTestMethod() throws Exception
+    {
         List<Method> testMethods = new ArrayList<Method>();
         Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
         for(Method method : methods)
@@ -19,17 +31,8 @@ public class FizzBuzzTest
                 testMethods.add(method);
             }
         }
-        for(Method method : testMethods)
-        {
-            System.out.println("testing: " + method.getName());
-            Object obj = FizzBuzzTest.class.newInstance();
-            method.invoke(obj,new Object[]{});
-        }        
-        outputTestResult();
     }
-   
     FizzBuzz fizzBuzz = new FizzBuzz();
- 
     public void test_1_should_be_1()
     {     
         asserEquals("1",fizzBuzz.say(1));
