@@ -12,8 +12,9 @@ public class FizzBuzzTest
     {
         for(Method method : getAllTestMethod(FizzBuzzTest.class))
         {
+            Class clazz = FizzBuzzTest.class;
             System.out.println("testing: " + method.getName());
-            Object obj = FizzBuzzTest.class.newInstance();
+            Object obj = clazz.newInstance();
             method.invoke(obj,new Object[]{});
         }     
         
