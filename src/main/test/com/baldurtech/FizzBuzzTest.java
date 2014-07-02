@@ -10,17 +10,19 @@ public class FizzBuzzTest
     
     public static void main(String args[]) throws Exception
     {
+        Class clazz = FizzBuzzTest.class;
+        runAllTest(clazz);
+        outputTestResult();
+    }
+    public static void runAllTest(Class clazz) throws Exception
+    {
         for(Method method : getAllTestMethod(FizzBuzzTest.class))
         {
-            Class clazz = FizzBuzzTest.class;
             System.out.println("testing: " + method.getName());
             Object obj = clazz.newInstance();
             method.invoke(obj,new Object[]{});
-        }     
-        
-        outputTestResult();
+        }      
     }
-
     public static List<Method> getAllTestMethod(Class clazz) throws Exception
     {
         List<Method> testMethods = new ArrayList<Method>();
