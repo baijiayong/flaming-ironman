@@ -60,7 +60,7 @@ public class FizzBuzzTest
     {
         assertEquals("4",fizzBuzz.say(4));
     }
-    public void test_5_shoule_be_Buzz()
+    public void test_5_should_be_Buzz()
     {
         assertEquals("Buzz",fizzBuzz.say(5));
     }

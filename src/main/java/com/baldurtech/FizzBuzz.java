@@ -8,11 +8,15 @@ public class FizzBuzz
     {
         if(num == 2) thisIsABug = true;
         
-        if(num % 3 ==0 )
+        if(num % 3 ==0)
         {
             if(thisIsABug) return "42";
             return "Fizz";
         }
+        if(num % 5 == 0)
+        {
+            return "Buzz";
+        } 
         return String.valueOf(num);
     }
 }
