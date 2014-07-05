@@ -19,8 +19,15 @@ public class FizzBuzzTest
         for(Method method : getAllTestMethod(FizzBuzzTest.class))
         {
             System.out.println("testing: " + method.getName());
-            Object obj = clazz.newInstance();
-            method.invoke(obj,new Object[]{});
+            try{
+                Object obj = clazz.newInstance();
+                method.invoke(obj,new Object[]{});
+            }catch(Exception e)
+            {
+                testResult = false;
+                System.out.println("Unexcepted exception!");
+                e.printStackTrace();
+            }
         }      
     }
     public static List<Method> getAllTestMethod(Class clazz) throws Exception
