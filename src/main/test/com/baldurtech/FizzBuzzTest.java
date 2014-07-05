@@ -64,6 +64,10 @@ public class FizzBuzzTest
     {
         assertEquals("Buzz",fizzBuzz.say(5));
     }
+    public void test_6_shoule_be_Fizz()
+    {
+        assertEquals("Fizz",fizzBuzz.say(6));
+    }
     public static void assertEquals(String expectedResult,String actualResult)
     {
        if(false ==(expectedResult.equals(actualResult)))
