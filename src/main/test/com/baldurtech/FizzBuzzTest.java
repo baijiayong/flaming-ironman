@@ -45,9 +45,13 @@ public class FizzBuzzTest
     {
         asserEquals("2",fizzBuzz.say(2));
     }
-    public void test_3_shoule_be_Fizz()
+    public void test_3_should_be_Fizz()
     {
         asserEquals("Fizz",fizzBuzz.say(3));
+    }
+    public void test_4_should_be_4()
+    {
+        asserEquals("4",fizzBuzz.say(4));
     }
     public static void asserEquals(String expectedResult,String actualResult)
     {
