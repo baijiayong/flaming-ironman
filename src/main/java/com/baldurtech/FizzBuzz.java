@@ -8,8 +8,6 @@ public class FizzBuzz
     {
         if(num == 2) thisIsABug = true;
         
-        if(num == 4) throw new RuntimeException("This is a bug!");
-        
         if(num % 3 ==0 )
         {
             if(thisIsABug) return "42";
