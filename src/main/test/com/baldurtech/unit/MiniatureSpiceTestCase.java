@@ -71,6 +71,14 @@ public class MiniatureSpiceTestCase
     {
         assertEquals(null,actualResult,actualResult == null);
     }
+    public static void assertTrue(Boolean actualResult)
+    {
+        assertEquals(true,actualResult,actualResult == true);
+    }
+    public static void assertFalse(Boolean actualResult)
+    {
+        assertEquals(false,actualResult,actualResult == false);
+    }
     public static void assertNull(Object expectedResult,Object actualResult)
     {
         Boolean testResult =false;

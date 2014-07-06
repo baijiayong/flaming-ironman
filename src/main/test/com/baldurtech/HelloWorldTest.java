@@ -20,4 +20,8 @@ public class HelloWorldTest extends MiniatureSpiceTestCase
     {
         assertNull(null);
     }
+    public void test_true()
+    {
+        assertTrue(false);
+    }
 }
