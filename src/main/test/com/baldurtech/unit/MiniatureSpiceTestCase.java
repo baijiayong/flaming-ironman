@@ -61,18 +61,34 @@ public class MiniatureSpiceTestCase
     }
     public static void assertEquals(String expectedResult,String actualResult)
     {
-        assertEquals(expectedResult,actualResult,false == expectedResult.equals(actualResult));
+        assertEquals(expectedResult,actualResult,expectedResult.equals(actualResult));
     } 
     public static void assertEquals(int expectedResult, int actualResult)
     {   
-        assertEquals(expectedResult,actualResult,expectedResult != actualResult);
+        assertEquals(expectedResult,actualResult,expectedResult == actualResult);
     }
-    public static void assertEquals(Object expectedResult, Object actualResult,Boolean testFail)
+    public static void assertNull(Object actualResult)
     {
-        if(testFail)
+        assertEquals(null,actualResult,actualResult == null);
+    }
+    public static void assertNull(Object expectedResult,Object actualResult)
+    {
+        Boolean testResult =false;
+        if(expectedResult == null && actualResult ==null)
+        {
+            testResult = true;
+        }else if(expectedResult != null)
+        {
+            testResult = expectedResult.equals(actualResult);
+        }
+        assertEquals(expectedResult,actualResult,testResult);
+    }
+    public static void assertEquals(Object expectedResult, Object actualResult,Boolean testSuccess)
+    {
+        if(! testSuccess)
         {
             testResult = false;
-            System.out.println("Excepted '" + expectedResult + "', but '" + actualResult + "'");
+            System.out.println("Excepted '" + (expectedResult == null?"NULL":expectedResult) + "', but '" + (actualResult == null?"NULL":actualResult) + "'");
         }
     }
     private static void outputTestResult()

@@ -12,4 +12,12 @@ public class HelloWorldTest extends MiniatureSpiceTestCase
     {
         assertEquals(2,Integer.parseInt("2"));
     }
+    public void test_3_should_equals_3()
+    {
+        assertEquals(new Integer(3),new Integer("3"));
+    }
+    public void test_null()
+    {
+        assertNull(null);
+    }
 }
