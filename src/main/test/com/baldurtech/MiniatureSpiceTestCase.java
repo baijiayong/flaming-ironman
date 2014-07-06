@@ -13,18 +13,22 @@ public class MiniatureSpiceTestCase
     
     public static void main(String args[]) throws Exception
     {
-        String testPackage = "com.baldurtech";
-         
-        Reflections reflections = new Reflections(testPackage);
         
-        Set<Class<? extends MiniatureSpiceTestCase>> allTestCase = reflections.getSubTypesOf(MiniatureSpiceTestCase.class);
-        
-        for(Class clazz: allTestCase)
+        if(args.length > 0)
         {
+            String testPackage = args[0];
+         
+            Reflections reflections = new Reflections(testPackage);
+            
+            Set<Class<? extends MiniatureSpiceTestCase>> allTestCase = reflections.getSubTypesOf(MiniatureSpiceTestCase.class);
+        
+            for(Class clazz: allTestCase)
+            {
             System.out.println("Testing: " + clazz.getName());
             runAllTest(clazz);
+            }
+            outputTestResult();
         }
-        outputTestResult();
     }
     public static void runAllTest(Class clazz) throws Exception
     {
