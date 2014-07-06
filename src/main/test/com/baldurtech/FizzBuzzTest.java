@@ -27,8 +27,12 @@ public class FizzBuzzTest extends MiniatureSpiceTestCase
     {
         assertEquals("Buzz",fizzBuzz.say(5));
     }
-    public void test_6_shoule_be_Fizz()
+    public void test_6_should_be_Fizz()
     {
         assertEquals("Fizz",fizzBuzz.say(6));
+    }
+    public void test_10_should_be_Buzz()
+    {
+        assertEquals("Buzz",fizzBuzz.say(10));
     }
 }

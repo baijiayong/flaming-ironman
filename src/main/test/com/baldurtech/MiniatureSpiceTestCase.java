@@ -3,6 +3,9 @@ package com.baldurtech;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+
+import org.reflections.Reflections;
 
 public class MiniatureSpiceTestCase
 {
@@ -10,8 +13,17 @@ public class MiniatureSpiceTestCase
     
     public static void main(String args[]) throws Exception
     {
-        Class clazz = FizzBuzzTest.class;
-        runAllTest(clazz);
+        String testPackage = "com.baldurtech";
+         
+        Reflections reflections = new Reflections(testPackage);
+        
+        Set<Class<? extends MiniatureSpiceTestCase>> allTestCase = reflections.getSubTypesOf(MiniatureSpiceTestCase.class);
+        
+        for(Class clazz: allTestCase)
+        {
+            System.out.println("Testing: " + clazz.getName());
+            runAllTest(clazz);
+        }
         outputTestResult();
     }
     public static void runAllTest(Class clazz) throws Exception
