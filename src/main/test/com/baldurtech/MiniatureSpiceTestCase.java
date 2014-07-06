@@ -32,7 +32,7 @@ public class MiniatureSpiceTestCase
     }
     public static void runAllTest(Class clazz) throws Exception
     {
-        for(Method method : getAllTestMethod(FizzBuzzTest.class))
+        for(Method method : getAllTestMethod(clazz))
         {
             System.out.println("testing: " + method.getName());
             try{
