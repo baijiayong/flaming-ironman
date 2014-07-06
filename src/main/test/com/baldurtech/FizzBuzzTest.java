@@ -4,6 +4,8 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.baldurtech.unit.MiniatureSpiceTestCase;
+
 public class FizzBuzzTest extends MiniatureSpiceTestCase
 {   
     FizzBuzz fizzBuzz = new FizzBuzz();
