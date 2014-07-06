@@ -61,13 +61,11 @@ public class MiniatureSpiceTestCase
     }
     public static void assertEquals(String expectedResult,String actualResult)
     {
-        Boolean testFail = false  == expectedResult.equals(actualResult);
-        assertEquals(expectedResult,actualResult,testFail);
+        assertEquals(expectedResult,actualResult,false == expectedResult.equals(actualResult));
     } 
     public static void assertEquals(int expectedResult, int actualResult)
     {   
-        Boolean testFail = expectedResult != actualResult;
-        assertEquals(expectedResult,actualResult,testFail);
+        assertEquals(expectedResult,actualResult,expectedResult != actualResult);
     }
     public static void assertEquals(Object expectedResult, Object actualResult,Boolean testFail)
     {
