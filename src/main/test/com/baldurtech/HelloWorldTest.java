@@ -22,6 +22,6 @@ public class HelloWorldTest extends MiniatureSpiceTestCase
     }
     public void test_true()
     {
-        assertTrue(false);
+        assertTrue(true);
     }
 }
